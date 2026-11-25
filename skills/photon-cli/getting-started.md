@@ -18,10 +18,13 @@ Everything is fully self-serve except **possibly** `photon login`: it uses the d
 **Don't be reckless, either.** Run freely: install, the auth check, `projects create` (free tier — no card, nothing charged), `show`/`list`, and `regenerate-secret` on a fresh project. **Confirm first** for anything that spends money (`projects upgrade`, `billing checkout`) or destroys/breaks live state (`projects delete`, or re-running `regenerate-secret` on a project with live integrations — it invalidates the old secret instantly).
 
 ```bash
-# 0. Install (skip if `photon --version` already works)
-bun add -g @photon-ai/cli@legacy     # or: npm i -g @photon-ai/cli@legacy
-#    If `photon --version` prints 3.x, that is the Photon 2.0 CLI and it rejects these commands
-#    (LEGACY_COMMAND). Use `npx @photon-ai/cli@legacy <command>` or install the legacy tag.
+# 0. Check the CLI. These are 1.0 commands and need CLI 2.x, published as @photon-ai/cli@legacy.
+photon --version
+#    Prints 2.x: go on.
+#    Not installed: bun add -g @photon-ai/cli@legacy   (or: npm i -g @photon-ai/cli@legacy)
+#    Prints 3.x: that is the Photon 2.0 CLI, which rejects these commands with LEGACY_COMMAND.
+#    Keep it, and run every command below as `npx -y @photon-ai/cli@legacy <command>`
+#    instead of `photon <command>`.
 
 # 1. Make sure you're authenticated. If `whoami` already names the user, skip the login.
 photon whoami --json || photon login --no-browser   # login needs the user to approve in-browser
@@ -58,6 +61,8 @@ Spectrum applies its [capability and fallback semantics](../spectrum/capability-
 bun add -g @photon-ai/cli@legacy      # or npm i -g @photon-ai/cli@legacy
 photon --version
 ```
+
+If `photon --version` prints 3.x, the Photon 2.0 CLI is installed. Keep it and run 1.0 commands as `npx -y @photon-ai/cli@legacy <command>`.
 
 Both `photon` and the shorthand `pho` are installed. Run any command with `--help` to see its flags (`photon projects --help`).
 

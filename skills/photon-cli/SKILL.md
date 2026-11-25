@@ -54,10 +54,13 @@ How you set Photon up depends on what the user wants — match it, don't default
 This is the whole thing. Plain, non-interactive, `--json` everywhere — drive it and read the results.
 
 ```bash
-# 0. Install if needed (this is expected and safe — don't hesitate on it)
-photon --version || bun add -g @photon-ai/cli@legacy      # or: npm i -g @photon-ai/cli@legacy
-#    If `photon --version` prints 3.x, that is the Photon 2.0 CLI and it rejects these commands
-#    (LEGACY_COMMAND). Use `npx @photon-ai/cli@legacy <command>` or install the legacy tag.
+# 0. Check the CLI. These are 1.0 commands and need CLI 2.x, published as @photon-ai/cli@legacy.
+photon --version
+#    Prints 2.x: go on.
+#    Not installed: bun add -g @photon-ai/cli@legacy   (or: npm i -g @photon-ai/cli@legacy)
+#    Prints 3.x: that is the Photon 2.0 CLI, which rejects these commands with LEGACY_COMMAND.
+#    Keep it, and run every command below as `npx -y @photon-ai/cli@legacy <command>`
+#    instead of `photon <command>`.
 
 # 1. Auth check. If whoami names the user, there is ZERO human involvement from here.
 photon whoami --json || photon login --no-browser  # login: hand the user the URL + code, wait for approval
