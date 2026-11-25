@@ -1,16 +1,19 @@
 ---
 name: imessage
 description: >
+  Photon 1.0 (legacy, Spectrum); for Photon 2.0 use the `photon` skill in photon-hq/skills.
   Build, debug, or migrate iMessage integrations with Photon. Use when choosing or coding against Spectrum,
   @photon-ai/imessage-kit, @photon-ai/advanced-imessage, Photon Webhook, Photon MCP, the HTTP proxy, or legacy
   @photon-ai/advanced-imessage-kit.
-license: MIT
+license: Apache-2.0
 metadata:
   author: photon-hq
-  version: '9.1.0'
+  version: '9.2.0'
 ---
 
 # iMessage
+
+> **Photon 1.0 (legacy).** This skill covers Photon 1.0 (Spectrum). For Photon 2.0 (the Photon API at `https://api.photon.codes/v1` and `@photon-ai/cli` 3.x), install the 2.0 skill instead: `npx skills add photon-hq/skills --skill photon`. Don't mix packages, API hosts or credentials between the two.
 
 ## Package boundary
 

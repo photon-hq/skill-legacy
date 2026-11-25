@@ -1,6 +1,7 @@
 ---
 name: photon-cli
 description: >
+  Photon 1.0 (legacy, Spectrum); for Photon 2.0 use the `photon` skill in photon-hq/skills.
   Use when working with the Photon CLI — the `photon` binary (alias `pho`). Reach for this skill to
   set up / bootstrap Photon for a user and run it yourself non-interactively (create a project, capture
   the id + secret, verify) — when the user says "set this up for me," that is your job to do, not hand
@@ -20,13 +21,15 @@ description: >
   lines, add line, imessage line, users, invite, platforms, enable, disable, profile, avatar, ping, env,
   config, json output, api-host, multi-backend, backend, bun, commander, eden, dashboard-api,
   quickstart, agent setup, automated setup, non-interactive, scriptable bootstrap, set up photon.
-license: MIT
+license: Apache-2.0
 metadata:
   author: photon-hq
-  version: '1.0.0'
+  version: '1.1.0'
 ---
 
 # Photon CLI
+
+> **Photon 1.0 (legacy).** This skill covers Photon 1.0 (Spectrum). For Photon 2.0 (the Photon API at `https://api.photon.codes/v1` and `@photon-ai/cli` 3.x), install the 2.0 skill instead: `npx skills add photon-hq/skills --skill photon`. Don't mix packages, API hosts or credentials between the two.
 
 `photon` (alias `pho`) is a typed terminal UI for the **Photon Dashboard**. Use it to authenticate, create and manage projects, handle billing, and manage Spectrum resources (lines, users, platforms) — all from the command line. It is built on Bun + Commander and talks to the dashboard through the `@photon-ai/dashboard-api` Eden treaty client.
 
@@ -52,7 +55,9 @@ This is the whole thing. Plain, non-interactive, `--json` everywhere — drive i
 
 ```bash
 # 0. Install if needed (this is expected and safe — don't hesitate on it)
-photon --version || bun add -g @photon-ai/cli      # or: npm i -g @photon-ai/cli
+photon --version || bun add -g @photon-ai/cli@legacy      # or: npm i -g @photon-ai/cli@legacy
+#    If `photon --version` prints 3.x, that is the Photon 2.0 CLI and it rejects these commands
+#    (LEGACY_COMMAND). Use `npx @photon-ai/cli@legacy <command>` or install the legacy tag.
 
 # 1. Auth check. If whoami names the user, there is ZERO human involvement from here.
 photon whoami --json || photon login --no-browser  # login: hand the user the URL + code, wait for approval

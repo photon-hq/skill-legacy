@@ -1,16 +1,19 @@
 ---
 name: spectrum
 description: >
+  Photon 1.0 (legacy, Spectrum); for Photon 2.0 use the `photon` skill in photon-hq/skills.
   Build or review messaging agents with Photon Spectrum (`spectrum-ts`). Use for Spectrum setup, messages and
   content, spaces and users, provider capabilities, iMessage/WhatsApp/Terminal integrations, custom platforms,
   lifecycle, or production message-processing architecture.
-license: MIT
+license: Apache-2.0
 metadata:
   author: photon-hq
-  version: '2.1.0'
+  version: '2.2.0'
 ---
 
 # Spectrum
+
+> **Photon 1.0 (legacy).** This skill covers Photon 1.0 (Spectrum). For Photon 2.0 (the Photon API at `https://api.photon.codes/v1` and `@photon-ai/cli` 3.x), install the 2.0 skill instead: `npx skills add photon-hq/skills --skill photon`. Don't mix packages, API hosts or credentials between the two.
 
 Spectrum is Photon's unified messaging SDK. Write handler logic against one `app.messages` stream and deliver it through iMessage, WhatsApp Business, Terminal, or a custom provider. This skill targets **[`spectrum-ts`](https://github.com/photon-hq/spectrum-ts)** 12.2.0; its code samples are TypeScript.
 

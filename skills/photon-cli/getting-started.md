@@ -19,7 +19,9 @@ Everything is fully self-serve except **possibly** `photon login`: it uses the d
 
 ```bash
 # 0. Install (skip if `photon --version` already works)
-bun add -g @photon-ai/cli            # or: npm i -g @photon-ai/cli
+bun add -g @photon-ai/cli@legacy     # or: npm i -g @photon-ai/cli@legacy
+#    If `photon --version` prints 3.x, that is the Photon 2.0 CLI and it rejects these commands
+#    (LEGACY_COMMAND). Use `npx @photon-ai/cli@legacy <command>` or install the legacy tag.
 
 # 1. Make sure you're authenticated. If `whoami` already names the user, skip the login.
 photon whoami --json || photon login --no-browser   # login needs the user to approve in-browser
@@ -53,7 +55,7 @@ Spectrum applies its [capability and fallback semantics](../spectrum/capability-
 ## Install
 
 ```bash
-bun add -g @photon-ai/cli      # or npm i -g @photon-ai/cli
+bun add -g @photon-ai/cli@legacy      # or npm i -g @photon-ai/cli@legacy
 photon --version
 ```
 

@@ -10,11 +10,11 @@ For migration, replace copied raw IDs with `MessageEffect.lasers` or `MessageEff
 
 ## Photon Webhook
 
-[Photon Webhook](https://github.com/photon-hq/webhook) delivers hosted iMessage events to an existing HTTP backend with HMAC signatures. Validate the signature before parsing or acting on the payload. Use an outbound SDK—normally Spectrum or the Advanced iMessage HTTP client—to reply.
+[Photon Webhook](https://github.com/photon-hq/webhook) (archived repository) delivers hosted iMessage events to an existing HTTP backend with HMAC signatures. Validate the signature before parsing or acting on the payload. Use an outbound SDK—normally Spectrum or the Advanced iMessage HTTP client—to reply.
 
 ## Photon MCP
 
-[Photon MCP](https://github.com/photon-hq/mcp) exposes hosted iMessage operations as MCP tools. Use it when an MCP-compatible agent needs iMessage access without embedding an SDK. Keep credentials in the MCP server configuration rather than prompts or tool arguments.
+[Photon MCP](https://github.com/photon-hq/mcp) (archived repository) exposes hosted iMessage operations as MCP tools. Use it when an MCP-compatible agent needs iMessage access without embedding an SDK. Keep credentials in the MCP server configuration rather than prompts or tool arguments.
 
 ## HTTP proxy
 

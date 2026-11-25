@@ -258,4 +258,4 @@ Use launchd, cron, or a durable job queue for schedules that must survive proces
 ## Source
 
 - [`@photon-ai/imessage-kit` 3.0.0 package manifest](https://unpkg.com/@photon-ai/imessage-kit@3.0.0/package.json)
-- [Package repository](https://github.com/photon-hq/imessage-kit)
+- [Package repository](https://github.com/photon-hq/imessage-kit) (archived)

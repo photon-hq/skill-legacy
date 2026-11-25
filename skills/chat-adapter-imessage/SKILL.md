@@ -1,19 +1,22 @@
 ---
 name: chat-adapter-imessage
 description: >
+  Photon 1.0 (legacy, Spectrum); for Photon 2.0 use the `photon` skill in photon-hq/skills.
   Connect the Vercel AI SDK to iMessage. Build AI agents and assistants that communicate over iMessage using
   chat-adapter-imessage, the official Photon adapter. Local mode (runs on your Mac) and remote mode (Photon's
   production infrastructure). Covers createiMessageAdapter, postMessage, editMessage, deleteMessage, react,
   startGatewayListener, types, and integration with the Chat SDK.
   Keywords: vercel ai sdk, imessage, chat adapter, ai agent, chatbot, conversational ai, messaging, apple messages,
   vercel, nextjs, ai assistant, chat sdk, real-time, macos.
-license: MIT
+license: Apache-2.0
 metadata:
   author: photon-hq
-  version: '1.0.0'
+  version: '1.1.0'
 ---
 
 # Vercel AI SDK: iMessage Adapter Skill
+
+> **Photon 1.0 (legacy).** This skill covers Photon 1.0 (Spectrum). For Photon 2.0 (the Photon API at `https://api.photon.codes/v1` and `@photon-ai/cli` 3.x), install the 2.0 skill instead: `npx skills add photon-hq/skills --skill photon`. Don't mix packages, API hosts or credentials between the two.
 
 This skill provides a complete reference for using `chat-adapter-imessage`, the official Photon adapter for connecting the [Vercel AI SDK (Chat SDK)](https://sdk.vercel.ai) to iMessage.
 
@@ -223,4 +226,4 @@ interface NativeWebhookPayload {
 
 1.  [Vercel AI SDK (Chat)](https://sdk.vercel.ai/docs/chat)
 2.  [chat-adapter-imessage on npm](https://www.npmjs.com/package/chat-adapter-imessage)
-3.  [Photon](https://photon.codes/spectrum)
+3.  [Photon 1.0 docs](https://photon.codes/docs/spectrum-ts/introduction)
