@@ -27,7 +27,7 @@ photon --version
 #    instead of `photon <command>`.
 
 # 1. Make sure you're authenticated. If `whoami` already names the user, skip the login.
-photon whoami --json || photon login --no-browser   # login needs the user to approve in-browser
+photon whoami || photon login --no-browser   # login needs the user to approve in-browser
 
 # 2. Bootstrap a project (free tier — nothing is charged). Capture the id from --json.
 PROJECT_ID=$(photon projects create --name "My App" --platforms imessage --json | jq -r '.id')

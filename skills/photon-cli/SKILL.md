@@ -63,10 +63,12 @@ photon --version
 #    instead of `photon <command>`.
 
 # 1. Auth check. If whoami names the user, there is ZERO human involvement from here.
-photon whoami --json || photon login --no-browser  # login: hand the user the URL + code, wait for approval
+photon whoami || photon login --no-browser  # login: hand the user the URL + code, wait for approval
 
 # 2. Bootstrap a project (free tier — no card, nothing charged). Capture the id.
-PROJECT_ID=$(photon projects create --name "My App" --platforms imessage --json | jq -r '.id')
+CREATED=$(photon projects create --name "My App" --platforms imessage --json)
+echo "$CREATED" | jq -r '.warning // empty'   # e.g. owner_phone_missing: tell the user before going on
+PROJECT_ID=$(echo "$CREATED" | jq -r '.id')
 export PHOTON_PROJECT_ID="$PROJECT_ID"
 
 # 3. Read the Spectrum API secret (does NOT rotate). Mint one only if the project
